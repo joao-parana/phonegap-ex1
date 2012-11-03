@@ -1,6 +1,7 @@
 /**
  * Module dependencies.
  */
+
 var express = require('express')
   , routes = require('./routes')
   , User = require('./models/User.js')
@@ -69,7 +70,25 @@ app.post('/signup', function(req, res) {
 	  res.redirect('/form');
   });
 });
+
+var misc = require('./util/misc');
+var calc = new misc.Calc();
+console.log("Adding %d to 10 gives us %d", calc.x, calc.addX(10));
+
+// throw "Finalizando" 
 	  
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
+});
+
+var io = require('socket.io').listen(81);
+
+io.sockets.on('connection', function (socket) {
+  socket.emit('news-from-server', { hello: 'iniciando. Primeira mensagem do servidor' });
+  socket.on('event-from-client', function (data) {
+    console.log(data);
+  });
+  socket.on('log-event', function (data) {
+    console.log(data);
+  });  
 });
