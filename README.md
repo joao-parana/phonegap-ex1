@@ -23,3 +23,13 @@ podemos ler na aplicacao Node JS com process.env.ENV_VARIABLE
   process.env.MONGOLAB_USER
   process.env.MONGOLAB_PASSWD
   process.env.MONGOLAB_HOST
+
+Use o comando sudo visudo para editar o arquivo /etc/sudoers
+
+Neste arquivo devera' ser adicionado as variaveis de ambiente mencionadas acima, do contrario n~ao poder'a ser executado o comando
+
+sudo node app
+
+para rodar a aplicacao na porta 80
+
+
