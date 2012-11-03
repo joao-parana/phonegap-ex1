@@ -13,7 +13,7 @@ module.exports.addUser = addUser;
 function addUser(username, password, callback) {
   var instance = new MyUser();
   console.log('username=' + username + ', password=' + password + ', na execucao do addUser');
-  console.log('callback=' + callback);
+  // console.log('callback=' + callback);
   instance.username = username;
   instance.password = password;
   instance.save(function (err) {

@@ -32,4 +32,5 @@ sudo node app
 
 para rodar a aplicacao na porta 80
 
-
+ NODE_PORT=80
+ export NODE_PORT
